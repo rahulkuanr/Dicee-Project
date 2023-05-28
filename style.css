@@ -1,0 +1,30 @@
+body,
+.btn {
+  background-color: #9ef8ee;
+}
+
+h1.display-1,
+.display-5 {
+  font-family: "Pangolin", cursive;
+  color: #22babb;
+}
+
+h3 {
+  border: none;
+  outline: none;
+}
+
+.display {
+  display: none;
+}
+
+.btn {
+  border-color: #22babb;
+}
+
+.btn:hover {
+  color: #22babb;
+  border-color: #22babb;
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.5);
+}
