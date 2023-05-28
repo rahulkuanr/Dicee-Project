@@ -4,7 +4,9 @@ body,
 }
 
 h1.display-1,
-.display-5 {
+.display-5,
+p#footer-para,
+a {
   font-family: "Pangolin", cursive;
   color: #22babb;
 }
