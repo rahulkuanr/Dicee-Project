@@ -1,22 +1,16 @@
-let p1_dices = document.querySelectorAll(".p1_dicees>img");
-let p2_dices = document.querySelectorAll(".p2_dicees>img");
+let p1_dice = document.querySelector(".p1_dice>img");
+let p2_dice = document.querySelector(".p2_dice>img");
 let paraElement = document.querySelector("p.lead");
 
-function hideDices() {
-  hideAllDices();
-
-  p1_dices[5].classList.remove("display");
-  p2_dices[5].classList.remove("display");
-}
-
 function getResult() {
-  hideAllDices();
+  let p1_random = Math.floor(Math.random() * 6);
+  let p2_random = Math.floor(Math.random() * 6);
 
-  let p1_random = Math.floor(Math.random() * p1_dices.length);
-  let p2_random = Math.floor(Math.random() * p1_dices.length);
+  let imgSrc1 = "./assets/images/dice_" + (p1_random + 1) + ".svg";
+  let imgSrc2 = "./assets/images/dice_" + (p2_random + 1) + ".svg";
 
-  p1_dices[p1_random].classList.remove("display");
-  p2_dices[p2_random].classList.remove("display");
+  p1_dice.setAttribute("src", imgSrc1);
+  p2_dice.setAttribute("src", imgSrc2);
 
   if (p1_random > p2_random) {
     paraElement.innerHTML =
@@ -27,15 +21,5 @@ function getResult() {
   } else {
     paraElement.innerHTML =
       '<p class="display-5 lead"> Its a <span class="display-5" style="color: #F24405;"> draw. </span> Roll again!</p>';
-  }
-}
-
-function hideAllDices() {
-  for (let img of p1_dices) {
-    img.classList.add("display");
-  }
-
-  for (let img of p2_dices) {
-    img.classList.add("display");
   }
 }
